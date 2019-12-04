@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="hello.js"></script>
+</head>
+<body>
+Population Size: <input type="text" id="populationSize" value="400"/><br/>
+Crossover Prob: <input type="text" id="crossoverProb" value="0.9"/><br/>
+Mutation Prob: <input type="text" id="mutationProb" value="0.2"/><br/>
+Target String: <input type="text" id="target" value="Hello World!"/><br/>
+<input type="button" value="Run" onclick="letThereBeLight(parseFloat(document.getElementById('populationSize').value),parseFloat(document.getElementById('crossoverProb').value),parseFloat(document.getElementById('mutationProb').value),document.getElementById('target').value);"/>
+<hr/>
+Best candidate: <span id="best"></span><br/>
+<canvas id="canvas"></canvas><br/>
+<strong>Press 'run' to start</strong><br/>
+This script implements a simple genetic algorithm. See how the population responds to different mutation and chromosome probabilities, and what happens if you change the size of the population.<br/><br/>
+For example, change the crossover to 0, and you quickly evolve a population of identical clones.<br/>
+Or change mutation to 0, and notice that you just can't get above a certain level of fitness.<br/><br/>
+The code hasn't been polished, but you might be able to derive some value from it. I'm releasing it to the public domain, so do with it as you will.
+</body>
+</html>
