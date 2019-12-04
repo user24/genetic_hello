@@ -41,16 +41,16 @@ The fitness function I decided on was the following:
 
 Return the sum of the character-wise differences between the chromosome and the target string. Thus "Hello Xorld!" has a fitness of -1 because X is one letter away from W, while "Hello Yorld!" has a fitness of -2 because Y is two characters away from W. This measure is quite rich; there are many different possible fitness levels, and it’s quite expressive. In the code, we implement this like so:
 
-  function fitness(chromosome) {
-    // higher fitness is better
-    var f = 0; // start at 0 - the best fitness
-    for(var i=0, c=target.length ; i<c ; i++) {
-      // subtract the ascii difference between the target char and the chromosome char
-      // Thus 'c' is fitter than 'd' when compared to 'a'.
-      f -= Math.abs(target.charCodeAt(i)-chromosome[i]);
+    function fitness(chromosome) {
+      // higher fitness is better
+      var f = 0; // start at 0 - the best fitness
+      for(var i=0, c=target.length ; i<c ; i++) {
+        // subtract the ascii difference between the target char and the chromosome char
+        // Thus 'c' is fitter than 'd' when compared to 'a'.
+        f -= Math.abs(target.charCodeAt(i)-chromosome[i]);
+      }
+      return f;
     }
-    return f;
-  }
   
 *Note that this code was written in 2012; these days I'd be using let not var, and maybe execute a reduce function over the array in a more functional manner, instead of just looping over it.*
 
